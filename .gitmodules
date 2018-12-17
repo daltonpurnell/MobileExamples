@@ -1,0 +1,3 @@
+[submodule "iOS/iOSSDK"]
+	path = iOS/iOSSDK
+	url = git@github.com:PhenixRTS/iOSSDK.git
