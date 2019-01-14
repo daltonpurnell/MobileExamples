@@ -1,0 +1,52 @@
+<!--
+  ~ Copyright 2019 PhenixP2P Inc. All Rights Reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+  <string name="app_name">Channel Viewer</string>
+  <string name="subscribe">Subscribe</string>
+  <string name="unsubscribe">Unsubscribe</string>
+
+  <!-- ####################################### -->
+  <!-- User friendly Phenix status description -->
+  <!-- ####################################### -->
+
+  <!-- Success -->
+  <string name="phenix_request_status_ok">Success</string>
+  <!-- No stream available to subscribe to -->
+  <string name="phenix_request_status_noStreamPlaying">Offline</string>
+  <!-- Missing or invalid arguments, reattempt with fixed parameters -->
+  <string name="phenix_request_status_badRequest">Unable to complete the request with the current settings</string>
+  <!-- New token required, do not retry -->
+  <string name="phenix_request_status_unauthorized">You are not authorized to view this channel</string>
+  <!-- The request conflicts with the current state of the resource, do not retry -->
+  <string name="phenix_request_status_conflict">Resource conflict occurred</string>
+  <!-- The resource referenced is no longer available, do not retry -->
+  <string name="phenix_request_status_gone">Channel does not exist</string>
+  <!-- PCast not initialized, do not retry -->
+  <string name="phenix_request_status_notInitialized">PCast not initialized</string>
+  <!-- PCast not started, do not retry -->
+  <string name="phenix_request_status_notStarted">PCast not started</string>
+  <!-- Upgrade is required, do not retry -->
+  <string name="phenix_request_status_upgradeRequired">Upgrade required</string>
+  <!-- General error, retry once -->
+  <string name="phenix_request_status_failed">Something went wrong, please try again</string>
+  <!-- Capacity error, retry with back-off -->
+  <string name="phenix_request_status_capacity">Too many viewers, please try again</string>
+  <!-- Timeout error, retry once -->
+  <string name="phenix_request_status_timeout">Timeout error, please try again</string>
+  <!-- Resource is not ready yet, retry -->
+  <string name="phenix_request_status_notReady">We are not ready, please retry</string>
+</resources>
