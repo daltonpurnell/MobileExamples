@@ -16,9 +16,23 @@
 import UIKit
 import WebKit
 
+/**
+ * WebView based channel viewer.<br/>
+ * To publish a video to this channel, open the following link in your web browser:
+ * In your web browser, open "https://phenixrts.com/channel/publish/#channelAlias"
+ */
 class ViewController: UIViewController, WKUIDelegate {
 
-  public static let kUrl = "https://phenixrts.com/channel/?mss=mr#webViewDemo"
+  /**
+   * The channel alias is derived from the channel name.
+   * For example, a channel with name "My Channel Name!" will have the alias "myChannelName".
+   */
+  private static let channelAlias = "webViewDemo"
+
+  /**
+   * Subscribe link to channel with alias `channelAlias`
+   */
+  private static let subscribeUrl = "https://phenixrts.com/channel/?mss=mr#" + channelAlias
 
   var webView: WKWebView!
 
@@ -36,7 +50,7 @@ class ViewController: UIViewController, WKUIDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let myURL = URL(string: ViewController.kUrl)
+    let myURL = URL(string: ViewController.subscribeUrl)
     let myRequest = URLRequest(url: myURL!)
 
     self.webView.load(myRequest)
