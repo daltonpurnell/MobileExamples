@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 PhenixP2P Inc. All Rights Reserved.
+ * Copyright 2019 Phenix Real Time Solutions, Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,8 @@ class ViewController: UIViewController {
     self.mainStreamPlayer = nil
   }
 
+  private let ciContext = CIContext(options: nil)
+
   private var renderer: PhenixRenderer?
   private var userMedia: PhenixUserMediaStream?
   private var mainStreamPlayer: MainStreamPlayer?
@@ -61,6 +63,12 @@ class ViewController: UIViewController {
     mediaConstraints.video.enabled = true
     mediaConstraints.video.capabilityConstraints[PhenixDeviceCapability.facingMode.rawValue] =
         [PhenixDeviceConstraint.initWith(.user)]
+    mediaConstraints.video.capabilityConstraints[PhenixDeviceCapability.frameRate.rawValue] =
+        [PhenixDeviceConstraint.initWith(30)]
+    mediaConstraints.video.capabilityConstraints[PhenixDeviceCapability.height.rawValue] =
+        [PhenixDeviceConstraint.initWith(720)]
+    mediaConstraints.video.capabilityConstraints[PhenixDeviceCapability.width.rawValue] =
+        [PhenixDeviceConstraint.initWith(1280)]
     mediaConstraints.audio.enabled = true
 
     self.channelExpress?.pcastExpress.getUserMedia(mediaConstraints, { [weak self] (status, userMediaStream) in
@@ -135,7 +143,7 @@ class ViewController: UIViewController {
     cgContext.translateBy(x: 0, y: 0)
     cgContext.scaleBy(x: 0.25, y: 0.25)
     cgContext.draw(
-        frame.coreGraphicsImage,
+        frame.createCoreGraphicsImage(self.ciContext),
         in: CGRect(x: baseWidth, y: baseHeight, width: frameWidth, height: frameHeight))
 
     CVPixelBufferUnlockBaseAddress(base, CVPixelBufferLockFlags(rawValue: 0))

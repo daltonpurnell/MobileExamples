@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 PhenixP2P Inc. All Rights Reserved.
+ * Copyright 2019 Phenix Real Time Solutions, Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,9 @@ import CoreImage
 import CoreVideo
 
 extension CVPixelBuffer {
-  var coreGraphicsImage: CGImage {
-    get {
-      let ciContext = CIContext.init(options: nil)
-      let ciImage = CIImage(cvPixelBuffer: self)
-      return ciContext.createCGImage(ciImage, from: ciImage.extent)!
-    }
+  func createCoreGraphicsImage(_ ciContext: CIContext) -> CGImage {
+    let ciImage = CIImage(cvPixelBuffer: self)
+    return ciContext.createCGImage(ciImage, from: ciImage.extent)!
   }
 
   func createCoreGraphicsContext() -> CGContext {

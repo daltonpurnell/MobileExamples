@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 PhenixP2P Inc. All Rights Reserved.
+ * Copyright 2019 Phenix Real Time Solutions, Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,21 @@ import AVFoundation
 
 final class MainStreamPlayer {
   init() {
-    let urlAsset = AVURLAsset.init(url: URL.init(string: Configuration.kMainStreamUrl)!)
+    let urlAsset = AVURLAsset(url: URL(string: Configuration.kMainStreamUrl)!)
     let videoOutputSettings = [String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_32BGRA,
                                String(kCVPixelBufferCGBitmapContextCompatibilityKey): true] as [String : Any]
 
-    self.avPlayerItemVideoOutput = AVPlayerItemVideoOutput.init(pixelBufferAttributes: videoOutputSettings)
-    self.avPlayerItem = AVPlayerItem.init(asset: urlAsset)
+    self.avPlayerItemVideoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: videoOutputSettings)
+    self.avPlayerItem = AVPlayerItem(asset: urlAsset)
     self.avPlayerItem.add(self.avPlayerItemVideoOutput)
-    self.avPlayer = AVPlayer.init(playerItem: self.avPlayerItem)
+
+    self.avPlayer = AVPlayer(playerItem: self.avPlayerItem)
 
     self.avPlayer.play()
+
+    // NOTE: Would prefer to use AVQueuePlayer/AVPlayerLooper but that does not seem to work when there is a
+    //       AVPlayerItemVideoOutput attached to the player item.
+    self.loopPlayback()
   }
 
   public func tryGetCurrentFrame() -> CVPixelBuffer? {
@@ -37,4 +42,14 @@ final class MainStreamPlayer {
   private let avPlayer: AVPlayer
   private let avPlayerItemVideoOutput: AVPlayerItemVideoOutput
   private let avPlayerItem: AVPlayerItem
+
+  private func loopPlayback() {
+    NotificationCenter.default.addObserver(
+        forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+        object: self.avPlayerItem,
+        queue: nil) { notification in
+          self.avPlayer.seek(to: CMTime.zero)
+          self.avPlayer.play()
+        }
+  }
 }
