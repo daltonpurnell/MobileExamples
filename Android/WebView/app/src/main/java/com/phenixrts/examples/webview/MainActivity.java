@@ -29,7 +29,26 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+/**
+ * WebView based channel viewer.<br/>
+ * To publish a video to this channel, open the following link in your web browser:
+ * "https://phenixrts.com/channel/publish/#{@link MainActivity#CHANNEL_ALIAS}"
+ */
 public class MainActivity extends AppCompatActivity {
+
+  private static final String ORIGIN = "https://phenixrts.com/";
+
+  /**
+   * The channel alias is derived from the channel name.
+   * For example, a channel with name "My Channel Name!" will have the alias "myChannelName".
+   */
+  private static final String CHANNEL_ALIAS = "webViewDemo";
+
+  /**
+   * Subscribe link to channel with alias {@link MainActivity#CHANNEL_ALIAS}
+   */
+  private static final String SUBSCRIBE_URL = "https://phenixrts.com/channel/?mss=mr#" + CHANNEL_ALIAS;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +56,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     WebView myWebView = (WebView) findViewById(R.id.myWebView);
-    final String origin = "https://phenixrts.com/";
-    final String url = "https://phenixrts.com/channel/?mss=mr#webViewDemo";
-
-    myWebView.loadUrl(url);
+    myWebView.loadUrl(SUBSCRIBE_URL);
     myWebView.setWebViewClient(new WebViewClient() {
       @SuppressWarnings("deprecation")
       @Override
@@ -74,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
           public void run() {
             // Make sure the request is coming from our file
             // Warning: This check may fail for local files
-            if (request.getOrigin().toString().equals(origin)) {
+            if (request.getOrigin().toString().equals(ORIGIN)) {
               request.grant(request.getResources());
             } else {
               request.deny();
