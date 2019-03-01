@@ -17,7 +17,7 @@ import PhenixSdk
 
 struct Configuration {
   public static let kMainStreamUrl = "https://archive.org/download/ElephantsDream/ed_hd_512kb.mp4"
-  public static let kBackendEndpoint = "https://demo.phenixrts.com/demo/"
+  public static let kBackendEndpoint = "https://demo-integration.phenixrts.com/pcast"
 
   public static let kRendererOptions = { () -> PhenixRendererOptions in
     let options = PhenixRendererOptions()
