@@ -1,20 +1,17 @@
 /*
  * Copyright 2019 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All Rights Reserved.
  *
- *  By using this code you agree to the Phenix Terms of Service found online here:
- *  http://phenixrts.com/terms-of-service.html
+ * By using this code you agree to the Phenix Terms of Service found online here:
+ * http://phenixrts.com/terms-of-service.html
  */
 package com.phenixrts.demo.simpledemoapps.subsciber.subscribe;
 
-import static com.phenixrts.demo.simpledemoapps.subsciber.PhenixHelper.createChannelExpress;
 import static com.phenixrts.system.Utilities.requireNonNull;
 
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.SurfaceView;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.phenixrts.express.ChannelExpress;
 import com.phenixrts.express.ChannelExpressFactory;
@@ -37,23 +34,6 @@ public class PhenixSubscribeComponent {
   private final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
 
   private final ChannelExpress channelExpress;
-
-  /**
-   * PhenixHelper for easy subscribe to channels
-   *
-   * @param backendUri backend url to be used for creating {@link ChannelExpress}
-   * @param pcastUri optional, for custom authentication
-   */
-  public PhenixSubscribeComponent(@NonNull Context context,
-      @NonNull String backendUri,
-      @Nullable String pcastUri) {
-
-    Log.d(TAG, String.format("Creating ChannelExpress with backendUri [%s] and pcastUri [%s]",
-        backendUri, pcastUri));
-
-    this.channelExpress = createChannelExpress(requireNonNull(context),
-        requireNonNull(backendUri), pcastUri);
-  }
 
   /**
    * @param channelExpress to be used for all channel subscribe related operations

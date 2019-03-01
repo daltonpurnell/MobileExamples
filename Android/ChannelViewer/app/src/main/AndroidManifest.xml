@@ -1,7 +1,8 @@
 <!--
   ~ Copyright 2019 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All Rights Reserved.
   ~
-  ~  By using this code you agree to the Phenix Terms of Service found online here: http://phenixrts.com/terms-of-service.html
+  ~ By using this code you agree to the Phenix Terms of Service found online here:
+  ~ http://phenixrts.com/terms-of-service.html
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,6 +13,7 @@
     android:allowBackup="false"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
+    android:name=".MyApplication"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
