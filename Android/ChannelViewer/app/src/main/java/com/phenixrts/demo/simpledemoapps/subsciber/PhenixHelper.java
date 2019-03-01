@@ -24,7 +24,7 @@ public class PhenixHelper {
      * @see <a href=https://phenixrts.com/docs/api/#backend-setup-node-js-example>Backend setup
      * documentation</a>
      */
-    public static final String BACKEND_URI = "https://demo.phenixrts.com/demo/";
+    public static final String BACKEND_URI = "https://demo-integration.phenixrts.com/pcast";
     public static final String PCAST_URI = "";
 
     /**
