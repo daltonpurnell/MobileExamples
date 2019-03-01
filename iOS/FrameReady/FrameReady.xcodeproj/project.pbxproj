@@ -121,7 +121,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "PhenixP2P Inc.";
+				ORGANIZATIONNAME = "Phenix Real Time Solutions, Inc.";
 				TargetAttributes = {
 					243ACEE521C9539000894D2E = {
 						CreatedOnToolsVersion = 10.1;
