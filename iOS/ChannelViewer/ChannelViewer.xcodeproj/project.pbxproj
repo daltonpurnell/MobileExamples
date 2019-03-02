@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		459EFE3F222D7E500071B7A8 /* OnSubscribeCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EFE3E222D7E500071B7A8 /* OnSubscribeCallback.swift */; };
 		45E7BECC2229F3210049347F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7BECB2229F3210049347F /* AppDelegate.swift */; };
 		45E7BECE2229F3210049347F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7BECD2229F3210049347F /* ViewController.swift */; };
 		45E7BED12229F3210049347F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E7BECF2229F3210049347F /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		45E7BED62229F3230049347F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E7BED42229F3230049347F /* LaunchScreen.storyboard */; };
 		45E7BEDE2229F3D90049347F /* PhenixSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E7BEDD2229F3D90049347F /* PhenixSdk.framework */; };
 		45E7BEDF2229F3D90049347F /* PhenixSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45E7BEDD2229F3D90049347F /* PhenixSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45E7BEE32229FA280049347F /* SubscribeCapability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7BEE22229FA280049347F /* SubscribeCapability.swift */; };
+		45E7BEE52229FA560049347F /* PhenixSubscribeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7BEE42229FA560049347F /* PhenixSubscribeComponent.swift */; };
+		45E7BEE7222A0A4F0049347F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45E7BEE6222A0A4F0049347F /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		459EFE3E222D7E500071B7A8 /* OnSubscribeCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnSubscribeCallback.swift; sourceTree = "<group>"; };
 		45E7BEC82229F3210049347F /* ChannelViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChannelViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E7BECB2229F3210049347F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45E7BECD2229F3210049347F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +44,9 @@
 		45E7BED52229F3230049347F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45E7BED72229F3230049347F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45E7BEDD2229F3D90049347F /* PhenixSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhenixSdk.framework; path = ../iOSSDK/lib/Universal/PhenixSdk.framework; sourceTree = "<group>"; };
+		45E7BEE22229FA280049347F /* SubscribeCapability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeCapability.swift; sourceTree = "<group>"; };
+		45E7BEE42229FA560049347F /* PhenixSubscribeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhenixSubscribeComponent.swift; sourceTree = "<group>"; };
+		45E7BEE6222A0A4F0049347F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,14 +81,26 @@
 		45E7BECA2229F3210049347F /* ChannelViewer */ = {
 			isa = PBXGroup;
 			children = (
+				45E7BEE12229F9FD0049347F /* Subscriber */,
 				45E7BECB2229F3210049347F /* AppDelegate.swift */,
 				45E7BECD2229F3210049347F /* ViewController.swift */,
 				45E7BECF2229F3210049347F /* Main.storyboard */,
 				45E7BED22229F3230049347F /* Assets.xcassets */,
 				45E7BED42229F3230049347F /* LaunchScreen.storyboard */,
 				45E7BED72229F3230049347F /* Info.plist */,
+				45E7BEE6222A0A4F0049347F /* Localizable.strings */,
 			);
 			path = ChannelViewer;
+			sourceTree = "<group>";
+		};
+		45E7BEE12229F9FD0049347F /* Subscriber */ = {
+			isa = PBXGroup;
+			children = (
+				45E7BEE42229FA560049347F /* PhenixSubscribeComponent.swift */,
+				45E7BEE22229FA280049347F /* SubscribeCapability.swift */,
+				459EFE3E222D7E500071B7A8 /* OnSubscribeCallback.swift */,
+			);
+			path = Subscriber;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45E7BED62229F3230049347F /* LaunchScreen.storyboard in Resources */,
+				45E7BEE7222A0A4F0049347F /* Localizable.strings in Resources */,
 				45E7BED32229F3230049347F /* Assets.xcassets in Resources */,
 				45E7BED12229F3210049347F /* Main.storyboard in Resources */,
 			);
@@ -156,6 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45E7BECE2229F3210049347F /* ViewController.swift in Sources */,
+				459EFE3F222D7E500071B7A8 /* OnSubscribeCallback.swift in Sources */,
+				45E7BEE52229FA560049347F /* PhenixSubscribeComponent.swift in Sources */,
+				45E7BEE32229FA280049347F /* SubscribeCapability.swift in Sources */,
 				45E7BECC2229F3210049347F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
@@ -323,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;

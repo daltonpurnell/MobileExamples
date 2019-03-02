@@ -6,11 +6,32 @@
  */
 
 import UIKit
+import PhenixSdk
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    public static let channelExpress: PhenixChannelExpress = { createChannelExpress() }()
+
+    public static let channelAlias = "mobileSimpleChannel"
+    private static let backendEndpoint = "https://demo-integration.phenixrts.com/pcast"
+
     var window: UIWindow?
 
+    private static func createChannelExpress() -> PhenixChannelExpress {
+        let pcastExpressOptions = PhenixPCastExpressFactory.createPCastExpressOptionsBuilder()
+            .withBackendUri(backendEndpoint)
+            .buildPCastExpressOptions()
+
+        let roomExpressOptions = PhenixRoomExpressFactory.createRoomExpressOptionsBuilder()
+            .withPCastExpressOptions(pcastExpressOptions)
+            .buildRoomExpressOptions()
+
+        let channelExpressOptions = PhenixChannelExpressFactory.createChannelExpressOptionsBuilder()
+            .withRoomExpressOptions(roomExpressOptions)
+            .buildChannelExpressOptions()
+
+        return PhenixChannelExpressFactory.createChannelExpress(channelExpressOptions)
+    }
 }
 
