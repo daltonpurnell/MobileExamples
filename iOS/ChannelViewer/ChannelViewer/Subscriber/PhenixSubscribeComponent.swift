@@ -44,7 +44,10 @@ public class PhenixSubscribeComponent {
 
         let joinChannelOptions = PhenixChannelExpressFactory.createJoinChannelOptionsBuilder()
             .withJoinRoomOptions(joinRoomOptions)
+            // Select the most recent stream. Viewing stream changes any time a new stream starts in the room.
             .withStreamSelectionStrategy(.mostRecent)
+            // Alternatively you can use high availability if you are using multiple simultaneous publishers.
+            // .withStreamSelectionStrategy(.highAvailability)
             .withRendererOptions(rendererOptions)
             .withRenderer(renderLayer)
             .buildJoinChannelOptions()
