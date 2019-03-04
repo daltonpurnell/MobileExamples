@@ -6,6 +6,7 @@
  */
 package com.phenixrts.demo.simpledemoapps.subsciber.subscribe;
 
+import static com.phenixrts.express.StreamSelectionStrategy.MOST_RECENT;
 import static com.phenixrts.system.Utilities.requireNonNull;
 
 import android.os.Handler;
@@ -55,6 +56,10 @@ public class PhenixSubscribeComponent {
 
     JoinChannelOptionsBuilder joinChannelOptionsBuilder = ChannelExpressFactory
         .createJoinChannelOptionsBuilder()
+        // Select the most recent stream. Viewing stream changes any time a new stream starts in the room.
+        .withStreamSelectionStrategy(MOST_RECENT)
+        // Alternatively you can use high availability if you are using multiple simultaneous publishers.
+        // .withStreamSelectionStrategy(HIGH_AVAILABILITY)
         .withJoinRoomOptions(joinRoomOptions);
 
     // preview options
