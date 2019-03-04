@@ -18,7 +18,11 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     tools:ignore="GoogleAppIndexingWarning">
-    <activity android:name=".SubscribeActivity">
+
+    <!-- It is recommended to prevent activity with video player from being recreated to keep playback smooth -->
+    <activity
+      android:configChanges="orientation|keyboard|screenSize"
+      android:name=".SubscribeActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>

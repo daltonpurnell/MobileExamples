@@ -2,7 +2,8 @@
 <!--
   ~ Copyright 2019 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All Rights Reserved.
   ~
-  ~  By using this code you agree to the Phenix Terms of Service found online here: http://phenixrts.com/terms-of-service.html
+  ~ By using this code you agree to the Phenix Terms of Service found online here:
+  ~ http://phenixrts.com/terms-of-service.html
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,36 +11,40 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="vertical"
-  tools:layout_editor_absoluteY="81dp">
+  android:orientation="vertical">
 
+  <!-- keepScreenOn will prevent the device from turning off the screen -->
   <SurfaceView
     android:id="@+id/playerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    />
+    android:keepScreenOn="true"
+    tools:layout_editor_absoluteX="52dp"
+    tools:layout_editor_absoluteY="0dp"/>
 
-  <Button
-    android:id="@+id/subscribeButton"
-    android:layout_width="100dp"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="32dp"
-    android:text="@string/subscribe"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@+id/unsubscibe_button"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toEndOf="@+id/playerView"/>
-  <Button
-    android:id="@+id/unsubscibe_button"
+  <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="32dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginLeft="16dp"
-    android:text="@string/unsubscribe"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@+id/playerView"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="@+id/playerView"
+    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toEndOf="@+id/subscribeButton"/>
+    app:layout_constraintStart_toStartOf="parent">
+
+    <Button
+      android:id="@+id/subscribeButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="16dp"
+      android:text="@string/subscribe"/>
+
+    <Button
+      android:id="@+id/unsubscibe_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/unsubscribe"/>
+
+  </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

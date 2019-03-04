@@ -74,11 +74,14 @@ public class SubscribeActivity extends Activity implements OnSubscribeCallback {
   public void onSubscribeSuccess(ExpressSubscriber subscriber, Renderer renderer) {
     currentSubscriber = subscriber;
     currentRenderer = renderer;
+
+    Toast.makeText(SubscribeActivity.this, "Playing", Toast.LENGTH_LONG)
+        .show();
   }
 
   @Override
   public void onNoActiveStream() {
-    Toast.makeText(SubscribeActivity.this, "Waiting for stream...", Toast.LENGTH_LONG)
+    Toast.makeText(SubscribeActivity.this, "Channel is offline. Waiting...", Toast.LENGTH_LONG)
         .show();
   }
 
