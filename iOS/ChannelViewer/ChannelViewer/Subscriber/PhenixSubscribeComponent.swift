@@ -30,11 +30,12 @@ public class PhenixSubscribeComponent {
      * Prepare required configuration to subcscribe channel
      */
     private func prepareNativeConfiguration(configuration: Configuration, playerView: UIView!) -> PhenixJoinChannelOptions {
+        let subscribeCapability = configuration.capability == nil ? [String]() : [configuration.capability!.rawValue]
 
         let joinRoomOptions = PhenixRoomExpressFactory.createJoinRoomOptionsBuilder()
             .withRoomAlias(configuration.channelAlias)
             .withRole(PhenixMemberRole.audience)
-            .withCapabilities([configuration.capability?.rawValue ?? ""])
+            .withCapabilities(subscribeCapability)
             .buildJoinRoomOptions()
 
         let renderLayer = playerView.layer
