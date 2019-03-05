@@ -7,22 +7,22 @@ This example application shows how to:
 3. Stop the stream
 4. Handle potential subscription errors
 
-For more details and additional features, please refer to our [Channel Express API](https://phenixrts.com/docs/android/#channel-express) documentation.
+For more details and additional features, please refer to our [Channel Express API](https://phenixrts.com/docs/ios/#channel-express) documentation.
 
 ## How to Run
 1) Make sure you have `git-lfs` installed
 2) After cloning the repository, download the Phenix SDK by running `git submodule init` and `git submodule update`.
--- The SDK is in a [private repository](https://github.com/PhenixRTS/AndroidSDK/). In case the SDK is not downloaded correctly, please confirm that you have access to the repository.
+-- The SDK is in a [private repository](https://github.com/PhenixRTS/iOSSDK). In case the SDK is not downloaded correctly, please confirm that you have access to the repository.
 3) To be able to subscribe, you need to publish to a channel first.
 -- You can use our online [channel demo](https://demo.phenixrts.com/channel/publish/#mobileSimpleChannel) to publish a stream.
-4) If desired, modify `MyApplication.CHANNEL_ALIAS` constant
+4) If desired, modify `AppDelegate.channelAlias` constant
 
 ## See Also
 ### Related Examples
 * [Mobile Examples](https://github.com/PhenixRTS/MobileExamples)
 * [Web Examples](https://github.com/PhenixRTS/WebExamples)
 ### Documentation
-* [Channel Viewer Tutorial](https://phenixrts.com/docs/android/#view-a-channel)
-* [Phenix Channel Express](https://phenixrts.com/docs/android/#channel-express)
-* [Phenix Low Level API](https://phenixrts.com/docs/android/low-level/)
+* [Channel Viewer Tutorial](https://phenixrts.com/docs/ios/#view-a-channel)
+* [Phenix Channel Express](https://phenixrts.com/docs/ios/#channel-express)
+* [Phenix Low Level API](https://phenixrts.com/docs/ios/low-level/)
 * [Phenix Platform Documentation](http://phenixrts.com/docs/)
