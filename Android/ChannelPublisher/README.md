@@ -20,7 +20,7 @@ For more details and additional features, please refer to our [Channel Express A
 * [Mobile Examples](https://github.com/PhenixRTS/MobileExamples)
 * [Web Examples](https://github.com/PhenixRTS/WebExamples)
 ### Documentation
-* [Channel Viewer Tutorial](https://phenixrts.com/docs/android/#publish-to-a-channel)
+* [Channel Publisher Tutorial](https://phenixrts.com/docs/android/#publish-to-a-channel)
 * [Phenix Channel Express](https://phenixrts.com/docs/android/#channel-express)
 * [Phenix Low Level API](https://phenixrts.com/docs/android/low-level/)
 * [Phenix Platform Documentation](http://phenixrts.com/docs/)
