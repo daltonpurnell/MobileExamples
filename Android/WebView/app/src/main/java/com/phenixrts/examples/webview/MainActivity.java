@@ -27,6 +27,8 @@ import android.webkit.WebViewClient;
  */
 public class MainActivity extends AppCompatActivity {
 
+  private static String TAG = MainActivity.class.getSimpleName();
+
   private static final String ORIGIN = "https://phenixrts.com/";
 
   /**
@@ -66,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
       @Override
       public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+        // Handle the error and notify the user
+        Log.e(TAG, "SSL error: " + error);
         handler.proceed();
       }
     });
