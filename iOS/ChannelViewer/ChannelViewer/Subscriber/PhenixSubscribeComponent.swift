@@ -92,7 +92,7 @@ public class PhenixSubscribeComponent {
 }
 
 public extension PhenixRequestStatus {
-    public func getLocalisedStatusMessage() -> String {
+    func getLocalisedStatusMessage() -> String {
         switch self {
         case .ok: return NSLocalizedString("PhenixRequestStatusOk", comment: "")
         case .noStreamPlaying: return NSLocalizedString("PhenixRequestStatusNoStreamPlaying", comment: "")
@@ -107,6 +107,7 @@ public extension PhenixRequestStatus {
         case .capacity: return NSLocalizedString("PhenixRequestStatusCapacity", comment: "")
         case .timeout: return NSLocalizedString("PhenixRequestStatusTimeout", comment: "")
         case .notReady: return NSLocalizedString("PhenixRequestStatusNotReady", comment: "")
+        case .rateLimited: return NSLocalizedString("PhenixRequestStatusRateLimited", comment: "")
         }
     }
 }

@@ -1,6 +1,3 @@
-[submodule "iOS/iOSSDK"]
-	path = iOS/iOSSDK
-	url = git@github.com:PhenixRTS/iOSSDK.git
 [submodule "Android/SimpleDemoApps/phenix-sdk"]
 	path = Android/ChannelViewer/phenix-sdk
 	url = git@github.com:PhenixRTS/AndroidSDK.git

@@ -80,6 +80,7 @@ private extension PhenixRequestStatus {
         case .capacity: return NSLocalizedString("PhenixRequestStatusCapacity", comment: "")
         case .timeout: return NSLocalizedString("PhenixRequestStatusTimeout", comment: "")
         case .notReady: return NSLocalizedString("PhenixRequestStatusNotReady", comment: "")
+        case .rateLimited: return NSLocalizedString("PhenixRequestStatusRateLimited", comment: "")
         }
     }
 }

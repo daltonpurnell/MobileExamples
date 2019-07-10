@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git' # Default global repository
+source 'git@github.com:PhenixRTS/CocoaPodsSpecs.git' # Phenix private repository
+
+platform :ios, '9.0'
+
+target 'ChannelViewer' do
+  use_frameworks!
+  pod 'PhenixSdk', '~> 2019.2.1'
+end

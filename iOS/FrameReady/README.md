@@ -1,9 +1,11 @@
 # iOS FrameReady API Example
 
 ### Building ###
-* Ensure iOS SDK has been cloned: run `git-submodule-setup.sh` in the repository root folder
-* Open Xcode project `FrameReady.xcodeproj`
-* Build and Run!
+1) Make sure you have `git-lfs` installed
+2) Inside project folder run `pod install`
+-- The SDK is in a [private repository](https://github.com/PhenixRTS/iOSSDK). In case the SDK is not downloaded correctly, please confirm that you have access to the repository.
+3) Open Xcode workspace file (`.xcworkspace` extension)
+4) Build and Run!
 
 ### What does it do? ###
 * Opens local user media stream (`PhenixPCastExpress.getUserMedia`)

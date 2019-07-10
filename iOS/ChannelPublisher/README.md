@@ -11,9 +11,10 @@ For more details and additional features, please refer to our [Channel Express A
 
 ## How to Run
 1) Make sure you have `git-lfs` installed
-2) After cloning the repository, download the Phenix SDK by running `git submodule init` and `git submodule update`.
+2) Inside project folder run `pod install`
 -- The SDK is in a [private repository](https://github.com/PhenixRTS/iOSSDK/). In case the SDK is not downloaded correctly, please confirm that you have access to the repository.
-3) If desired, modify `AppDelegate.channelName` constant
+3) Use Xcode workspace file (`.xcworkspace` extension)
+4) If desired, modify `AppDelegate.channelName` constant
 
 ## See Also
 ### Related Examples

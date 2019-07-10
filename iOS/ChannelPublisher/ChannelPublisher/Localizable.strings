@@ -33,4 +33,5 @@
 "PhenixRequestStatusTimeout" = "Timeout error, please try again";
 // Resource is not ready yet, retry
 "PhenixRequestStatusNotReady" = "We are not ready, please retry";
-
+// Rate limited, retry with back-off
+"PhenixRequestStatusRateLimited" = "Rate limited, please try again";
