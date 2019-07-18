@@ -12,6 +12,7 @@
 		24A49B0C1F716F7200B20B26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A49B0A1F716F7200B20B26 /* Main.storyboard */; };
 		24A49B0E1F716F7200B20B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A49B0D1F716F7200B20B26 /* Assets.xcassets */; };
 		24A49B111F716F7200B20B26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A49B0F1F716F7200B20B26 /* LaunchScreen.storyboard */; };
+		45AF9C1F22E08E260087F5B3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AF9C1E22E08E260087F5B3 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		24A49B0D1F716F7200B20B26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24A49B101F716F7200B20B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24A49B121F716F7200B20B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45AF9C1E22E08E260087F5B3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45AF9C1F22E08E260087F5B3 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				24A49B051F716F7200B20B26 /* WebView */,
 				24A49B041F716F7200B20B26 /* Products */,
+				45AF9C1D22E08E250087F5B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,14 @@
 				24A49B121F716F7200B20B26 /* Info.plist */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		45AF9C1D22E08E250087F5B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45AF9C1E22E08E260087F5B3 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,19 +103,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Phenix Real Time Solutions, Inc.";
 				TargetAttributes = {
 					24A49B021F716F7200B20B26 = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 24A49AFE1F716F7200B20B26 /* Build configuration list for PBXProject "WebView" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -168,6 +180,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -227,6 +240,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -294,8 +308,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -317,8 +330,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

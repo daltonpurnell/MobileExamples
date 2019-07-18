@@ -14,37 +14,36 @@ import WebKit
  */
 class ViewController: UIViewController, WKUIDelegate {
 
-  /**
-   * The channel alias is derived from the channel name.
-   * For example, a channel with name "My Channel Name!" will have the alias "myChannelName".
-   */
-  private static let channelAlias = "webViewDemo"
+    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var editedUrl: UITextField!
 
-  /**
-   * Subscribe link to channel with alias `channelAlias`
-   */
-  private static let subscribeUrl = "https://phenixrts.com/channel/?mss=mr#" + channelAlias
+    /**
+     * The channel alias is derived from the channel name.
+     * For example, a channel with name "My Channel Name!" will have the alias "myChannelName".
+     */
+    private let channelAlias = "webViewDemo"
 
-  var webView: WKWebView!
+    /**
+     * Subscribe link to channel with alias `channelAlias`
+     */
+    private lazy var subscribeUrl = "https://phenixrts.com/channel/#" + channelAlias
 
-  override func loadView() {
-    let webConfiguration = WKWebViewConfiguration()
-    webConfiguration.allowsInlineMediaPlayback = true
-    webConfiguration.mediaTypesRequiringUserActionForPlayback = []
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
-    self.webView.uiDelegate = self
+        editedUrl.text = subscribeUrl
 
-    self.view = self.webView
-  }
+        webView.configuration.allowsInlineMediaPlayback = true
+        webView.configuration.mediaTypesRequiringUserActionForPlayback = []
+        webView.uiDelegate = self
+        loadUrl(self)
+    }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    let myURL = URL(string: ViewController.subscribeUrl)
-    let myRequest = URLRequest(url: myURL!)
-
-    self.webView.load(myRequest)
-  }
+    @IBAction func loadUrl(_ sender: Any) {
+        if let urlText = editedUrl?.text, let url = URL(string: urlText) {
+            print("Info", "Loading url \(url)")
+            webView.load(URLRequest(url: url))
+        }
+    }
 }
 
