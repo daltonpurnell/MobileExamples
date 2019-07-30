@@ -1,16 +1,23 @@
+/*
+ * Copyright 2019 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All Rights Reserved.
+ *
+ *  By using this code you agree to the Phenix Terms of Service found online here:
+ *  http://phenixrts.com/terms-of-service.html
+ */
+
 buildscript {
 }
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 29
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.phenixrts.examples.webview"
-        minSdkVersion 22
-        targetSdkVersion 25
-        versionCode 1
-        versionName "2018.4.6"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 2
+        versionName "2019.0.0"
     }
     buildTypes {
         release {
@@ -18,9 +25,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:25.3.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
