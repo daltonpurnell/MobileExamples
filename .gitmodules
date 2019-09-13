@@ -1,6 +1,0 @@
-[submodule "Android/SimpleDemoApps/phenix-sdk"]
-	path = Android/ChannelViewer/phenix-sdk
-	url = git@github.com:PhenixRTS/AndroidSDK.git
-[submodule "Android/ChannelPublisher/phenix-sdk"]
-	path = Android/ChannelPublisher/phenix-sdk
-	url = git@github.com:PhenixRTS/AndroidSDK.git

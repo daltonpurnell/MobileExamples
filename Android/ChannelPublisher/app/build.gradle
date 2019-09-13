@@ -26,6 +26,16 @@ android {
     }
 }
 
+repositories {
+    maven {
+        credentials {
+            username githubUser
+            password githubPackageToken
+        }
+        url "https://maven.pkg.github.com/PhenixRTS/AndroidSDK"
+    }
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -33,6 +43,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation project(':phenix-sdk')
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    implementation "com.phenixrts.android:phenix-sdk-android:2019.2.2"
 }
