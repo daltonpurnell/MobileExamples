@@ -43,17 +43,9 @@ captures/
 
 # IntelliJ
 *.iml
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/gradle.xml
-.idea/assetWizardSettings.xml
-.idea/dictionaries
-.idea/libraries
-.idea/caches
-
-/.idea/codeStyles/Project.xml
-/.idea/misc.xml
-/.idea/runConfigurations.xml
+.idea/
+!.idea/copyright
+!.idea/codeStyles
 
 # Keystore files
 # Uncomment the following line if you do not want to check your keystore files in.
